@@ -9,6 +9,8 @@ import (
 	"go.mongodb.org/mongo-driver/mongo/options"
 )
 
+var MongoClient *mongo.Client
+
 type DB struct {
 	client *mongo.Client
 }
@@ -27,6 +29,7 @@ func NewDB(connectionString string) (*DB, error) {
 
 	fmt.Println("Connected to MongoDB!")
 
+	MongoClient = client
 	return &DB{client: client}, nil
 }
 
