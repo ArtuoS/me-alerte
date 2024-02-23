@@ -22,6 +22,17 @@ type Job struct {
 	ScrapDetailID  primitive.ObjectID `bson:"scrap_detail_id" json:"scrapDetailID"`
 }
 
+type JobDisplay struct {
+	ID             string    `json:"_id"`
+	Name           string    `json:"name"`
+	CareerPageName string    `json:"careerPageName"`
+	Description    string    `json:"description"`
+	JobUrl         string    `json:"jobUrl"`
+	IsRemoteWork   bool      `json:"isRemoteWork"`
+	PublishedDate  time.Time `json:"publishedDate"`
+	ScrapDetailID  string    `json:"scrapDetailID"`
+}
+
 func (j *Job) FormattedID() string {
 	return j.ID.Hex()
 }

@@ -15,7 +15,8 @@ type DB struct {
 	client *mongo.Client
 }
 
-func NewDB(connectionString string) (*DB, error) {
+func NewDB() (*DB, error) {
+	connectionString := "mongodb://localhost:27017"
 	clientOptions := options.Client().ApplyURI(connectionString)
 	client, err := mongo.Connect(context.TODO(), clientOptions)
 	if err != nil {

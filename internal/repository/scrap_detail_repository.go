@@ -4,7 +4,7 @@ import (
 	"context"
 
 	"github.com/ArtuoS/me-alerte/internal/database"
-	"github.com/ArtuoS/me-alerte/internal/model"
+	"github.com/ArtuoS/me-alerte/model"
 	"go.mongodb.org/mongo-driver/bson"
 	"go.mongodb.org/mongo-driver/bson/primitive"
 )

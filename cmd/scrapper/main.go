@@ -9,12 +9,12 @@ import (
 )
 
 func main() {
-	connectionString := "mongodb://localhost:27017"
-	dbInstance, err := database.NewDB(connectionString)
+	dbInstance, err := database.NewDB()
 	if err != nil {
 		return
 	}
 	defer dbInstance.Disconnect()
+	
 	jobRepository := repository.NewJobRepository(dbInstance)
 	jobService := service.NewJobService(jobRepository)
 	scrapDetailRepository := repository.NewScrapDetailRepository(dbInstance)

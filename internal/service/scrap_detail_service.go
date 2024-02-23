@@ -1,8 +1,8 @@
 package service
 
 import (
-	"github.com/ArtuoS/me-alerte/internal/model"
 	"github.com/ArtuoS/me-alerte/internal/repository"
+	"github.com/ArtuoS/me-alerte/model"
 	"go.mongodb.org/mongo-driver/bson/primitive"
 )
 

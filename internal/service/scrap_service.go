@@ -7,7 +7,7 @@ import (
 	"math"
 	"time"
 
-	"github.com/ArtuoS/me-alerte/internal/model"
+	"github.com/ArtuoS/me-alerte/model"
 	"github.com/go-resty/resty/v2"
 )
 

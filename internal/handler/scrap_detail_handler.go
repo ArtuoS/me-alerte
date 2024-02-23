@@ -1,20 +1,20 @@
-package controller
+package handler
 
 import (
 	"html/template"
 	"net/http"
 
-	"github.com/ArtuoS/me-alerte/internal/model"
 	"github.com/ArtuoS/me-alerte/internal/service"
+	"github.com/ArtuoS/me-alerte/model"
 	"go.mongodb.org/mongo-driver/bson/primitive"
 )
 
-type ScrapDetailController struct {
+type ScrapDetailHandler struct {
 	scrapDetailService *service.ScrapDetailService
 }
 
-func NewScrapDetailController(scrapDetailService *service.ScrapDetailService) *ScrapDetailController {
-	return &ScrapDetailController{
+func NewScrapDetailHandler(scrapDetailService *service.ScrapDetailService) *ScrapDetailHandler {
+	return &ScrapDetailHandler{
 		scrapDetailService: scrapDetailService,
 	}
 }
@@ -23,7 +23,7 @@ func FormattedID(ID primitive.ObjectID) string {
 	return ID.Hex()
 }
 
-func (s *ScrapDetailController) Get(w http.ResponseWriter, r *http.Request) {
+func (s *ScrapDetailHandler) Get(w http.ResponseWriter, r *http.Request) {
 	scrapDetails, err := s.scrapDetailService.GetAll()
 	if err != nil {
 		http.Error(w, err.Error(), http.StatusInternalServerError)
